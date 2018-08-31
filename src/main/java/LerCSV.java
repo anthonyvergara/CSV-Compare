@@ -16,7 +16,7 @@ public class LerCSV {
 
     public LerCSV() throws IOException, ParseException {
 
-        Scanner in = new Scanner(new FileReader("export3.csv"));
+        Scanner in = new Scanner(new FileReader("./resources/documento/export3.csv"));
 
         lista = new HashMap<>();
 
