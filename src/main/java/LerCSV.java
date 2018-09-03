@@ -4,8 +4,10 @@ import org.apache.commons.csv.CSVRecord;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -16,7 +18,7 @@ public class LerCSV {
 
     public LerCSV() throws IOException, ParseException {
 
-        Scanner in = new Scanner(new FileReader("./resources/documento/export3.csv"));
+        Scanner in = new Scanner(new FileReader("export.csv"));
 
         lista = new HashMap<>();
 
@@ -26,6 +28,7 @@ public class LerCSV {
             CSVRecord dados = p.getRecords().get(0);
 
             SimpleDateFormat formato = new SimpleDateFormat("yyyyMMdd");
+
 
             try {
                 Pessoa pessoa = new Pessoa(dados.get(0), dados.get(1), dados.get(2), formato.parse(dados.get(3)));
